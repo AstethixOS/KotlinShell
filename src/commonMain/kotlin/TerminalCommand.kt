@@ -1,10 +1,10 @@
 import kotlin.reflect.KClass
 
 class TerminalCommand(
-    private val code: TerminalCommandScope.() -> Unit,
-    val params: Map<String,KClass<*>>
+    val params: Map<String,KClass<*>>,
+    private val code: TerminalCommandScope.() -> Unit
 ) {
-    constructor(code: TerminalCommandScope.() -> Unit) : this(code, mapOf())
+    constructor(code: TerminalCommandScope.() -> Unit) : this(mapOf(), code)
 
     operator fun invoke(
         scope: TerminalCommandScope

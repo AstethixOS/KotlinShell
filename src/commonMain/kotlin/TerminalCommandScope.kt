@@ -1,15 +1,20 @@
 class TerminalCommandScope(
     private val print: String.() -> Unit,
-    private val data: Map<String,Any> = mapOf()
+    val data: Map<String,Any> = mapOf()
 ) {
-    constructor(print: String.() -> Unit) : this(print, mapOf())
+    constructor(print: String.() -> Unit,vararg data: Any) : this(print, mapOf("data" to data.toList()))
 
     fun Print(
-        vararg it: Any
+        vararg it: Any?,
+        splitter: String = " "
     ) {
+        val input = it.toList()
         var conversionResult: String = ""
-        for (i in it) {
-            conversionResult += i.toString()
+        for (a in input) {
+            conversionResult += a.toString()
+            if (a != input.last()) {
+                conversionResult += splitter
+            }
         }
         print.invoke(conversionResult)
     }

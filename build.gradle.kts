@@ -40,6 +40,7 @@ kotlin {
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+                implementation("com.soywiz.korlibs.korio:korio:4.0.9")
             }
         }
         val jvmMain by getting

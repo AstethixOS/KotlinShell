@@ -1,8 +1,8 @@
 class TerminalCommandScope(
-    private val print: String.() -> Unit,
+    private val api: TerminalAPI,
     val data: Map<String,Any> = mapOf()
 ) {
-    constructor(print: String.() -> Unit,vararg data: Any) : this(print, mapOf("data" to data.toList()))
+    constructor(api: TerminalAPI,vararg data: Any) : this(api, mapOf("data" to data.toList()))
 
     fun Print(
         vararg it: Any?,
@@ -16,12 +16,12 @@ class TerminalCommandScope(
                 conversionResult += splitter
             }
         }
-        print.invoke(conversionResult)
+        api.print.invoke(conversionResult)
     }
 
     fun PrintRaw(
         data: String
     ) {
-        print.invoke(data)
+        api.print.invoke(data)
     }
 }

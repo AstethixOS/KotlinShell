@@ -1,6 +1,6 @@
 class TerminalCommandScope(
     private val api: TerminalAPI,
-    val data: Map<String,Any> = mapOf()
+    private val data: Map<String,Any> = mapOf()
 ) {
     constructor(api: TerminalAPI,vararg data: Any) : this(api, mapOf("data" to data.toList()))
 
@@ -23,5 +23,9 @@ class TerminalCommandScope(
         data: String
     ) {
         api.print.invoke(data)
+    }
+
+    fun Exit() {
+        api.exit.invoke()
     }
 }

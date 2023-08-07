@@ -12,4 +12,5 @@
    - [ ] external commands(JVM)
    - [ ] Native binaries commands
 - [ ] Command parser
+- [ ] Coroutine support
 

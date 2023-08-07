@@ -2,12 +2,12 @@
 ### multiplatform **shell** writen in **Kotlin**
 #### as a library
 
-###### v 0.1
+###### v 0.2
 
 ## features
 
 - [ ] Commands
-   - [ ] classes for terminal command
+   - [X] classes for terminal command
    - [ ] builtin commands
    - [ ] external commands(JVM)
    - [ ] Native binaries commands

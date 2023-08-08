@@ -1,22 +1,18 @@
 class TerminalCommandScope(
     private val api: TerminalAPI,
-    private val data: Map<String,Any> = mapOf()
+    private val data: String = ""
 ) {
-    constructor(api: TerminalAPI,vararg data: Any) : this(api, mapOf("data" to data.toList()))
-
+    var args: Arguments = Arguments(data)
     fun Print(
         vararg it: Any?,
         splitter: String = " "
     ) {
         val input = it.toList()
-        var conversionResult: String = ""
-        for (a in input) {
-            conversionResult += a.toString()
-            if (a != input.last()) {
-                conversionResult += splitter
-            }
-        }
-        api.print.invoke(conversionResult)
+        api.print.invoke(
+            input.joinToString(
+                separator = splitter
+            )
+        )
     }
 
     fun PrintRaw(
@@ -28,4 +24,5 @@ class TerminalCommandScope(
     fun Exit() {
         api.exit.invoke()
     }
+
 }

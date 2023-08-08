@@ -4,17 +4,21 @@ class Shell() {
     fun Execute(
         prompt: String
     ) {
-        CommandParser.Parse(prompt).invoke(
-            TerminalCommandScope(
-                api = TerminalAPI(
-                    print = {
-                        println(this)
-                    },
-                    exit = {
-                        println("exited")
-                    }
+        val promptPreparedToProcess = prompt.split(' ')
+        if (promptPreparedToProcess.isNotEmpty()) {
+            val command = CommandParser.ParsePromptCommand(prompt)
+            command.invoke(
+                TerminalCommandScope(
+                    api = TerminalAPI(
+                        print = {
+                            println(this)
+                        }
+                    ),
+                    data = promptPreparedToProcess.drop(1).joinToString(
+                        separator = " "
+                    )
                 )
             )
-        )
+        }
     }
 }

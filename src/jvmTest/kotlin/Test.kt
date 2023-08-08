@@ -4,6 +4,6 @@ class Test() {
     @Test
     fun PrintTest() {
         var ShellInstance = Shell()
-        ShellInstance.Execute("exit")
+        ShellInstance.Execute("print hello world")
     }
 }

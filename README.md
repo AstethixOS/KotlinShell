@@ -2,7 +2,7 @@
 ### multiplatform **shell** writen in **Kotlin**
 #### as a library
 
-###### v 0.2
+###### v 0.3
 
 ## features
 
@@ -11,6 +11,9 @@
    - [ ] builtin commands
    - [ ] external commands(JVM)
    - [ ] Native binaries commands
-- [ ] Command parser
+- [ ] API
+  - [ ] arg parser
+  - [X] print
+  - [X] exit
 - [ ] Coroutine support
 

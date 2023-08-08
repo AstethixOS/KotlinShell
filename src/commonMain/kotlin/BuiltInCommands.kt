@@ -1,11 +1,9 @@
 var BuiltInCommands: Map<String, TerminalCommand> = mapOf(
     "print" to TerminalCommand {
-        val arguments = (data["data"] as? List<*>)?.let {
-            Print(*it.toTypedArray())
-        }
+        Print(*args.asList.toTypedArray())
     },
 
     "exit" to TerminalCommand {
-
+        Exit()
     }
 )

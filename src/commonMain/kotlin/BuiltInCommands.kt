@@ -5,5 +5,9 @@ var BuiltInCommands: Map<String, TerminalCommand> = mapOf(
 
     "exit" to TerminalCommand {
         Exit()
+    },
+
+    "clear" to TerminalCommand {
+        Clear()
     }
 )

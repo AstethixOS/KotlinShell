@@ -2,7 +2,7 @@
 ### multiplatform **shell** writen in **Kotlin**
 #### as a library
 
-###### v 0.3
+###### v 0.4
 
 ## features
 

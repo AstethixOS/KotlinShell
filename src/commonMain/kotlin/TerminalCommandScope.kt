@@ -15,6 +15,10 @@ class TerminalCommandScope(
         )
     }
 
+    fun Clear() {
+        api.clear.invoke()
+    }
+
     fun PrintRaw(
         data: String
     ) {

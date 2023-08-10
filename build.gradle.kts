@@ -2,7 +2,7 @@ plugins {
     kotlin("multiplatform") version "1.9.0"
 }
 
-group = "com.github.Astethix"
+group = "com.github.AstethixOS"
 version = "0.1"
 
 repositories {

@@ -1,3 +1,5 @@
+package com.github.AstethixOS.KotlinShell
+
 class TerminalCommandScope(
     private val api: TerminalAPI,
     private val data: String = ""

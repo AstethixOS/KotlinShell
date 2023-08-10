@@ -1,3 +1,4 @@
+import com.github.AstethixOS.KotlinShell.Shell
 import org.junit.jupiter.api.Test
 
 class Test() {

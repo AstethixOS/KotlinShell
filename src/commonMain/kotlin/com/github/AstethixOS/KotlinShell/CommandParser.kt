@@ -1,3 +1,5 @@
+package com.github.AstethixOS.KotlinShell
+
 object CommandParser {
     fun ParsePromptCommand(
         command: String

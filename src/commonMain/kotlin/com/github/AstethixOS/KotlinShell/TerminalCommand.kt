@@ -1,4 +1,4 @@
-import kotlin.reflect.KClass
+package com.github.AstethixOS.KotlinShell
 
 class TerminalCommand(
     private val code: TerminalCommandScope.() -> Unit

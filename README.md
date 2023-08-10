@@ -19,6 +19,6 @@
 - [ ] Coroutine support
 - [ ] Command history
   - [X] basic support
-  - [ ] singnals
+  - [ ] signals
   - [ ] custom output parameters
 

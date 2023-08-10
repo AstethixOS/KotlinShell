@@ -15,5 +15,10 @@
   - [ ] arg parser
   - [X] print
   - [X] exit
+  - [ ] History
 - [ ] Coroutine support
+- [ ] Command history
+  - [X] basic support
+  - [ ] singnals
+  - [ ] custom output parameters
 

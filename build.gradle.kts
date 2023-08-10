@@ -2,7 +2,7 @@ plugins {
     kotlin("multiplatform") version "1.9.0"
 }
 
-group = "dev.rebok"
+group = "com.github.Astethix"
 version = "0.1"
 
 repositories {

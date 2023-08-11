@@ -31,6 +31,7 @@ class Shell(
                         },
                         clear = {
                             history.clear()
+                            onHistoryChange.invoke(history)
                         },
                         exit = {
                             exit.invoke()

@@ -2,7 +2,7 @@ package com.github.AstethixOS.KotlinShell
 
 class Shell(
     private val exit: () -> Unit = {},
-    private val onHistoryChange: () -> Unit = {}
+    private val onHistoryChange: MutableList<CommandOutput>.() -> Unit = {}
 ) {
     val history: MutableList<CommandOutput> = mutableListOf()
     var currentDir: String = ""
@@ -18,7 +18,7 @@ class Shell(
                 dir = currentDir
             )
         )
-        onHistoryChange.invoke()
+        onHistoryChange.invoke(history)
 
         if (promptPreparedToProcess.isNotEmpty()) {
             val command = CommandParser.ParsePromptCommand(prompt)
@@ -27,7 +27,7 @@ class Shell(
                     api = TerminalAPI(
                         print = {
                             history[OutputIndex].PrintRaw(this)
-                            onHistoryChange.invoke()
+                            onHistoryChange.invoke(history)
                         },
                         clear = {
                             history.clear()

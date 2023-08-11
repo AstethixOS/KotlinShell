@@ -1,6 +1,6 @@
 package com.github.AstethixOS.KotlinShell
 
-class CommandOutput(
+data class CommandOutput(
     val prompt: String,
     var lines: MutableList<String> = mutableListOf(),
     val dir: String = ""

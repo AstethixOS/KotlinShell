@@ -8,7 +8,6 @@ data class CommandOutput(
     fun PrintRaw(
         contents: String
     ) {
-        println(contents)
         lines.add(contents)
     }
 }

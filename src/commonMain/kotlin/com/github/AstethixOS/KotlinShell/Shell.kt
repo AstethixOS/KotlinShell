@@ -1,6 +1,8 @@
 package com.github.AstethixOS.KotlinShell
 
-class Shell() {
+class Shell(
+    private val exit: () -> Unit
+) {
     val history: MutableList<CommandOutput> = mutableListOf()
     var currentDir: String = ""
 
@@ -26,6 +28,9 @@ class Shell() {
                         },
                         clear = {
                             history.clear()
+                        },
+                        exit = {
+                            exit.invoke()
                         }
                     ),
                     data = promptPreparedToProcess.drop(1).joinToString(

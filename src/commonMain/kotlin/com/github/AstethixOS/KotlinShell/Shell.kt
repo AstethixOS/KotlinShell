@@ -1,7 +1,7 @@
 package com.github.AstethixOS.KotlinShell
 
 class Shell(
-    private val exit: () -> Unit
+    private val exit: () -> Unit = {}
 ) {
     val history: MutableList<CommandOutput> = mutableListOf()
     var currentDir: String = ""
